@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.delivery'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0') // JUnit BOM
+    testImplementation 'org.junit.jupiter:junit-jupiter' // JUnit 5
+    testImplementation 'org.hamcrest:hamcrest:2.2' // Hamcrest 추가
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+test {
+    useJUnitPlatform()
+}
