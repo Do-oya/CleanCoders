@@ -1,7 +1,7 @@
 package com.example.atddorder.api;
 
-import com.example.atddorder.application.PendingOrderRequest;
-import com.example.atddorder.application.PendingOrderResponse;
+import com.example.atddorder.application.PendingOrderResponseDto;
+import com.example.atddorder.application.PendingOrderRequestDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,26 +21,26 @@ public class OrderApiIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @Autowired
     private ObjectMapper objectMapper;
 
     @Test
     void createPendingOrderTest() throws Exception {
-        // Arrange
+        // given
         Long productId = 1L;
         int quantity = 2;
-        PendingOrderRequest request = PendingOrderRequest.of(productId, quantity);
+        PendingOrderRequestDto request = PendingOrderRequestDto.of(productId, quantity);
 
-        // Act
+
+        // when
         MockHttpServletResponse response = mockMvc.perform(post("/orders/pendingOrder")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
                 .andReturn().getResponse();
 
-        // Assert
+        // then
         assertThat(response.getStatus()).isEqualTo(HttpStatus.OK.value());
-        PendingOrderResponse pendingOrderResponse = objectMapper.readValue(response.getContentAsString(), PendingOrderResponse.class);
+        PendingOrderResponseDto pendingOrderResponse = objectMapper.readValue(response.getContentAsString(), PendingOrderResponseDto.class);
         assertThat(pendingOrderResponse.getId()).isGreaterThan(0);
     }
 }
