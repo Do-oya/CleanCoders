@@ -18,7 +18,6 @@ public class PendingOrderResponseDto {
         this.quantity = quantity;
     }
 
-
     public PendingOrderResponseDto(PendingOrder pendingOrder) {
         this.id = pendingOrder.getId();
         this.productId = pendingOrder.getProductId();
