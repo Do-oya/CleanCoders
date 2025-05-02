@@ -1,5 +1,3 @@
----
-
 ## 🧼 클린코더스 실습 저장소
 
 [클린 코더스 유튜브 시리즈](https://www.youtube.com/watch?v=60lLSe1phks&list=PLeQ0NTYUDTmMM71Jn1scbEYdLFHz5ZqFA)를 보며  
