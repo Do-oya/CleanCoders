@@ -30,17 +30,23 @@ class TyrantTest {
         public void put() throws IOException {
             String key = "key";
             String value = "value";
-            socket = new Socket("localhost", 1978);
-            writer = new DataOutputStream(socket.getOutputStream());
+
+            open();
+
             writer.write(OPERATION_PREFIX);
             writer.write(OPERATION_PUT);
             writer.writeInt(key.length());
             writer.writeInt(value.length());
             writer.write(key.getBytes());
             writer.write(value.getBytes());
-            reader = socket.getInputStream();
             int status = reader.read();
             assertThat(status).isEqualTo(0);
+        }
+
+        private void open() throws IOException {
+            socket = new Socket("localhost", 1978);
+            writer = new DataOutputStream(socket.getOutputStream());
+            reader = socket.getInputStream();
         }
     }
 }
