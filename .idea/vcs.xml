@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bowling-game" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/primefactors" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tdd-practice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/wordwrap" vcs="Git" />
   </component>
 </project>
