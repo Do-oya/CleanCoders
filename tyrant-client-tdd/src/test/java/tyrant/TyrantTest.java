@@ -16,7 +16,7 @@ class TyrantTest {
 //        t.put("key", "value");
 //        assertThat(t.get("key")).isEqualTo("value");
 
-        new TyrantMap().put();
+        new TyrantMap().put("key", "value");
     }
 
     private static class TyrantMap {
@@ -27,9 +27,7 @@ class TyrantTest {
         private DataOutputStream writer;
         private InputStream reader;
 
-        public void put() throws IOException {
-            String key = "key";
-            String value = "value";
+        public void put(String key, String value) throws IOException {
 
             open();
 
