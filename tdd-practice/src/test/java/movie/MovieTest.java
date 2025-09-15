@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 class MovieTest {
     @Test
-    void foo() {
-
+    void canCreateMovie() {
+        Movie movie = new Movie();
     }
 }
