@@ -23,4 +23,11 @@ class MovieTest {
         movie.rate(1);
         assertThat(movie.averageRating()).isEqualTo(1);
     }
+
+    @Test
+    void should_return_4_when_3_and_5_were_rated() {
+        movie.rate(3);
+        movie.rate(5);
+        assertThat(movie.averageRating()).isEqualTo(4);
+    }
 }
