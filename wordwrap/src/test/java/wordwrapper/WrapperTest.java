@@ -11,6 +11,6 @@ public class WrapperTest {
     }
 
     private String wrap(String s, int length) {
-        return null;
+        return s.replaceAll(" ", "\n");
     }
 }
