@@ -12,10 +12,11 @@ public class PrimeFactorsTest {
     @Test
     void canFactorIntoPrimes() {
         assertThat(of(1)).isEqualTo(list());
+        assertThat(of(2)).isEqualTo(list(2));
     }
 
-    private static List<Integer> list() {
-        return Arrays.asList();
+    private static List<Integer> list(Integer... ints) {
+        return Arrays.asList(ints);
     }
 
     private List<Integer> of (int n) {
