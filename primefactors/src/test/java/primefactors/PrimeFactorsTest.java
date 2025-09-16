@@ -13,6 +13,7 @@ public class PrimeFactorsTest {
     void canFactorIntoPrimes() {
         assertThat(of(1)).isEqualTo(list());
         assertThat(of(2)).isEqualTo(list(2));
+        assertThat(of(3)).isEqualTo(list(3));
     }
 
     private static List<Integer> list(Integer... ints) {
