@@ -39,11 +39,15 @@ class GameTest {
 
     @Test
     void oneStrike() {
-        game.roll(10);
+        rollStrike();
         game.roll(5);
         game.roll(3);
         rollMany(16, 0);
         assertThat(game.getScore()).isEqualTo(26);
+    }
+
+    private void rollStrike() {
+        game.roll(10);
     }
 
     private void rollSpare() {
