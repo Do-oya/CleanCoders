@@ -29,6 +29,15 @@ class GameTest {
         assertThat(game.getScore()).isEqualTo(20);
     }
 
+    @Test
+    void oneSpare() {
+        game.roll(5);
+        game.roll(5); // spare
+        game.roll(3);
+        rollMany(0, 17);
+        assertThat(game.getScore()).isEqualTo(16);
+    }
+
     private void rollMany(int pins, int frames) {
         for (int i = 0; i < frames; i++) {
             game.roll(pins);
