@@ -11,9 +11,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PrimeFactorsTest {
     @Test
     void canFactorIntoPrimes() {
-        assertThat(of(1)).isEqualTo(list());
-        assertThat(of(2)).isEqualTo(list(2));
-        assertThat(of(3)).isEqualTo(list(3));
+        assertPrimeFactors(1, list());
+        assertPrimeFactors(2, list(2));
+        assertPrimeFactors(3, list(3));
+    }
+
+    private void assertPrimeFactors(int n, List<Integer> list) {
+        assertThat(of(n)).isEqualTo(list);
     }
 
     private static List<Integer> list(Integer... ints) {
