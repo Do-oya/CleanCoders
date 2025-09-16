@@ -11,6 +11,7 @@ public class WrapperTest {
         assertWraps(null, 1, "");
         assertWraps("", 1, "");
         assertWraps("x", 1, "x");
+        assertWraps("xx", 1, "x\nx");
     }
 
     private void assertWraps(String s, int width, String expected) {
