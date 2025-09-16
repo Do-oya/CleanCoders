@@ -10,7 +10,7 @@ public class Game {
         int score = 0;
         int firstRollInFrame = 0;
         for (int frame = 0; frame < 10; frame++) {
-            if (rolls[firstRollInFrame] + rolls[firstRollInFrame + 1] == 10) { // score
+            if (isSpare(firstRollInFrame)) {
                 score += 10 + rolls[firstRollInFrame + 2];
                 firstRollInFrame += 2;
             } else {
@@ -19,5 +19,9 @@ public class Game {
             }
         }
         return score;
+    }
+
+    private boolean isSpare(int firstRollInFrame) {
+        return rolls[firstRollInFrame] + rolls[firstRollInFrame + 1] == 10;
     }
 }
