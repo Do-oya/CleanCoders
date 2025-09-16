@@ -13,7 +13,7 @@ public class Game {
             if (isSpare(firstRollInFrame)) {
                 score += 10 + rolls[firstRollInFrame + 2];
                 firstRollInFrame += 2;
-            } else if (rolls[firstRollInFrame] == 10) { // strike
+            } else if (isStrike(firstRollInFrame)) {
                 score += 10 + rolls[firstRollInFrame + 1] + rolls[firstRollInFrame + 2];
                 firstRollInFrame += 1;
             } else {
@@ -22,6 +22,10 @@ public class Game {
             }
         }
         return score;
+    }
+
+    private boolean isStrike(int firstRollInFrame) {
+        return rolls[firstRollInFrame] == 10;
     }
 
     private boolean isSpare(int firstRollInFrame) {
