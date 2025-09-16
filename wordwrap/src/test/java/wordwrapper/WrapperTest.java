@@ -14,6 +14,8 @@ public class WrapperTest {
     }
 
     private String wrap(String s, int width) {
-        return "";
+        if (s == null)
+            return "";
+        return s;
     }
 }
