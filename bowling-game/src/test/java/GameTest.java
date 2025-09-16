@@ -23,4 +23,11 @@ class GameTest {
             game.roll(0);
         assertThat(game.getScore()).isEqualTo(0);
     }
+
+    @Test
+    void allOnes() {
+        for (int i = 0; i < 20; i++)
+            game.roll(1);
+        assertThat(game.getScore()).isEqualTo(20);
+    }
 }
