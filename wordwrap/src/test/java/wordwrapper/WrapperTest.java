@@ -11,7 +11,7 @@ public class WrapperTest {
         assertThat(wrap("a dog", 5)).isEqualTo("a dog");
     }
 
-    private String wrap(String s, int length) {
-        return s.replaceAll(" ", "\n");
+    private String wrap(String s, int width) {
+        return s.length() > width ? s.replaceAll(" ", "\n") : s;
     }
 }
