@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 class GameTest {
     @Test
-    void nothing() {
-        
+    void canCreate() {
+        Game game = new Game();
     }
 }
