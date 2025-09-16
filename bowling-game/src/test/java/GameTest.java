@@ -31,11 +31,15 @@ class GameTest {
 
     @Test
     void oneSpare() {
-        game.roll(5);
-        game.roll(5); // spare
+        rollSpare();
         game.roll(3);
         rollMany(0, 17);
         assertThat(game.getScore()).isEqualTo(16);
+    }
+
+    private void rollSpare() {
+        game.roll(5);
+        game.roll(5);
     }
 
     private void rollMany(int pins, int frames) {
