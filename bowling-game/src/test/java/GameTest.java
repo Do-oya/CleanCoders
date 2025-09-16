@@ -37,6 +37,15 @@ class GameTest {
         assertThat(game.getScore()).isEqualTo(16);
     }
 
+    @Test
+    void oneStrike() {
+        game.roll(10);
+        game.roll(5);
+        game.roll(3);
+        rollMany(16, 0);
+        assertThat(game.getScore()).isEqualTo(26);
+    }
+
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
