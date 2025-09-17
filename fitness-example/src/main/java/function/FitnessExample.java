@@ -25,13 +25,15 @@ public class FitnessExample {
 
             if (pageData.hasAttribute("Test")) {
                 if (includeSuiteSetup) {
-                    WikiPage suiteSetup = PageCrawlerImpl.getInheritedPage(SuiteResponder.SUITE_SETUP_NAME, wikiPage);
+                    String pageName = SuiteResponder.SUITE_SETUP_NAME;
+                    WikiPage suiteSetup = PageCrawlerImpl.getInheritedPage(pageName, wikiPage);
                     if (suiteSetup != null) {
                         String mode = "setup";
                         includePage(suiteSetup, mode);
                     }
                 }
-                WikiPage setup = PageCrawlerImpl.getInheritedPage("SetUp", wikiPage);
+                String setUp = "SetUp";
+                WikiPage setup = PageCrawlerImpl.getInheritedPage(setUp, wikiPage);
                 if (setup != null) {
                     String mode = "setup";
                     includePage(setup, mode);
@@ -40,13 +42,15 @@ public class FitnessExample {
 
             buffer.append(pageData.getContent());
             if (pageData.hasAttribute("Test")) {
-                WikiPage teardown = PageCrawlerImpl.getInheritedPage("TearDown", wikiPage);
+                String tearDown = "TearDown";
+                WikiPage teardown = PageCrawlerImpl.getInheritedPage(tearDown, wikiPage);
                 if (teardown != null) {
                     String mode = "teardown";
                     includePage(teardown, mode);
                 }
                 if (includeSuiteSetup) {
-                    WikiPage suiteTeardown = PageCrawlerImpl.getInheritedPage(SuiteResponder.SUITE_TEARDOWN_NAME, wikiPage);
+                    String suiteTeardownName = SuiteResponder.SUITE_TEARDOWN_NAME;
+                    WikiPage suiteTeardown = PageCrawlerImpl.getInheritedPage(suiteTeardownName, wikiPage);
                     if (suiteTeardown != null) {
                         String mode = "teardown";
                         includePage(suiteTeardown, mode);
