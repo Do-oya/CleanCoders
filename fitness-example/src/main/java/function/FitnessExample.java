@@ -22,7 +22,7 @@ public class FitnessExample {
         }
 
         public String invoke() throws Exception {
-            if (pageData.hasAttribute("Test")) {
+            if (isTestPage()) {
                 includeSetups();
                 buffer.append(pageData.getContent());
                 includeTeardowns();
@@ -30,6 +30,10 @@ public class FitnessExample {
 
             pageData.setContent(buffer.toString());
             return pageData.getHtml();
+        }
+
+        private boolean isTestPage() throws Exception {
+            return pageData.hasAttribute("Test");
         }
 
         private void includeTeardowns() throws Exception {
