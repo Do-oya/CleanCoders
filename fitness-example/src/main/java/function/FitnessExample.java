@@ -22,10 +22,14 @@ public class FitnessExample {
         }
 
         public String invoke() throws Exception {
+            includeSetupAndTearDownsIfTestPageAndIncludeContent();
+            return pageData.getHtml();
+        }
+
+        private void includeSetupAndTearDownsIfTestPageAndIncludeContent() throws Exception {
             if (isTestPage())
                 includeSetupAndTearDowns();
             pageData.setContent(buffer.toString());
-            return pageData.getHtml();
         }
 
         private void includeSetupAndTearDowns() throws Exception {
